@@ -1,0 +1,252 @@
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+* {
+box-sizing: border-box;
+}
+body {
+    font-family: Microsoft JhengHei;
+    line-height: 1.3rem;
+}
+
+.navbar {
+    background: rgb(0, 0, 0, 0.75);
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    .container {
+        padding: 0 42px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    img {
+        margin: 16px 0;
+    }
+    .nav-link {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #FFFFFF;
+            line-height: 60px;
+            padding: 0 15px;
+        }
+        a:hover {
+            background: rgb(239, 233, 231, 0.75);
+            color: black;
+        }
+    }
+    .fa-bars {
+        color: #FFFFFF;
+        display: none;
+    }
+    .fa-xmark {
+        color: #FFFFFF;
+        display: none;
+    }
+    .icons {
+        position: fixed; 
+        top: 0;
+        right: 0;
+        margin: 16px 20px 0 0;
+    }
+}
+
+header {
+    height: 420px;
+    background-image: url(/assets/header_desktop.png);
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    .content {
+        color: #FFFFFF;
+        text-align: center;
+        padding: 20px 42px 26px 22px;
+        background: rgba(0,0,0,0.35);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h1 {
+        font-size: 36px;
+        line-height: 3rem;
+    }
+    .display-br {
+        display: none;
+    }
+}
+
+footer {
+    background: $primary;
+    color: #3D1101;
+    .container {
+        padding: 50px 42px;
+        display: flex;
+    }
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    h1 {
+        font-family: 'Noto Sans TC', sans-serif;
+        margin-bottom: 22px;
+        font-size: 48px;
+        line-height: 48px;
+        font-weight: 900;
+    }
+    i {
+        font-size: 32px;
+        margin-left: 12px;
+    }
+    .fa-square-google-plus {
+        color: #DB4437;
+    }
+    .fa-square-twitter {
+        color: #41ABE1;
+    }
+    .fa-square-facebook {
+        color: #3A5795;
+    }
+}
+
+
+@media (max-width: 768px) {
+    
+.navbar {
+    .container {
+        padding: 0px 10px;
+    }
+}
+
+header {
+    height: 420px;
+    background-image: url(/assets/header_desktop.png);
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    .header-content {
+        color: #FFFFFF;
+        text-align: center;
+        padding: 20px 42px 26px 22px;
+        background: rgba(0,0,0,0.35);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h1 {
+        font-size: 36px;
+        line-height: 3rem;
+    }
+}
+
+footer {
+    background: $primary;
+    color: #3D1101;
+    .container {
+        padding: 50px 10px;
+        display: flex;
+    }
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    h1 {
+        font-family: 'Noto Sans TC', sans-serif;
+        margin-bottom: 22px;
+        font-size: 48px;
+        line-height: 48px;
+        font-weight: 900;
+    }
+    i {
+        font-size: 32px;
+        margin-left: 12px;
+    }
+    .fa-square-google-plus {
+        color: #DB4437;
+    }
+    .fa-square-twitter {
+        color: #41ABE1;
+    }
+    .fa-square-facebook {
+        color: #3A5795;
+    }
+}
+
+}
+
+@media (max-width: 540px) {
+
+    .navbar {
+
+        .nav-link {
+            display: block;
+            width: 100%;
+            height: 0;
+            background: rgb(0, 0, 0, 0.75);
+            position: fixed;
+            overflow: hidden;
+            left:0;
+            top:60px;
+            transition: all .5s;
+            a {
+                text-decoration: none;
+                color: #FFFFFF;
+                display: block;
+                padding: 15px;
+                line-height: 1.3rem;
+            }
+        }
+        
+        .fa-bars {
+            display: block;
+
+        }
+        .fa-xmark {
+            display: none;
+        }
+    }
+    .toggle-nav { //加在body上
+        .nav-link {
+            top:60px;
+            height: 153px;
+            transition: all .3s;
+        }
+        .fa-xmark {
+            display: block;
+            margin-top: -20px;
+        }
+    }
+    header {
+        background-image: url(/assets/header_mobile.png);
+        
+        .content {
+            width: 300px;
+            padding: 20px 6px;
+        }
+        .display-br {
+            display: block;
+        }
+    }
+    
+    footer {
+        .container {
+            padding: 50px 10px;
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+    
+}

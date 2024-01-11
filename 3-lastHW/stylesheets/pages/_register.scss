@@ -1,0 +1,31 @@
+.regester {
+    .form-register {
+        display: flex;
+        flex-direction: column;
+        max-width: 620px;
+        form {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .doublecheck {
+            margin-top: 12px;
+        }
+        .btn-orange {
+            display: block;
+            margin-left: auto;
+        }
+    }
+}
+
+@media(max-width: 430px) {
+    .regester {
+        .form-register {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+}
