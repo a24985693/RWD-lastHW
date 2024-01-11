@@ -1,0 +1,207 @@
+.order {
+    background: $primary;
+    color: $secondary;
+    .container {
+       padding: 48px 42px;
+       display: flex; 
+       gap: 20px;
+    }
+    .list {
+        display: flex;
+        flex-direction: column;
+        i {
+            font-size: 32px;
+            margin-right: 15px;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            border-bottom: 1px solid #3D1101;
+        }
+        a {
+            text-decoration: none;
+            color: $secondary;
+            display: block;
+            padding-left: 8px;
+        }
+        a:hover {
+            text-decoration: none;
+            background: $secondary;
+            color: #FFFFFF;
+        }
+    }
+
+    .products {
+        flex: 3;
+    }
+    .toolbar {
+        display: flex;
+        margin-bottom: 26px;
+        // 搜尋欄
+        .search {
+            height: 32px;
+            border: 2px solid #3D1101;
+            flex: 2;
+        }
+        input {
+            width: calc(100% - 38px);
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        .fa-magnifying-glass {
+            color: #FFFFFF;
+            height: 100%;
+            padding: 5px 8px;
+            background: $secondary;
+        }
+
+        // 去結帳
+        .checkout {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+        a {
+            text-decoration: none;
+            color: $secondary;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                background: $secondary;
+                width: 1px;
+                height: 14px;
+                top:20%;
+                left: calc(100% + 16px);
+            }
+        }
+        .split-line {
+            height: 14px;
+            border: 1px solid #3D1101;
+            margin: 0 12px;
+        }
+        .fa-cart-shopping {
+            font-size: 28px;
+            position: relative;
+            margin-left: 32px;
+        }
+        .cart-num {
+            border: 1px solid $primary;
+            position: absolute;
+            background: #FF5E45;
+            color: #FFFFFF;
+            font-size: 12px;
+            height: 16px;
+            width: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius:50% ;
+            top: 0;
+            left:100%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 30px;
+        .card {
+            width: 220px;
+            background: #EFE9E7;
+            box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+            position: relative;
+        }
+
+        .card-header {
+            max-width: 100%;
+            height: 120px;
+            position: relative;
+        }
+        .fa-heart {
+            font-size: 24px;
+            color: #FFFFFF;
+            position: absolute;
+            top: 9px;
+            left: 9px;
+        }
+
+        img {
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 10px 10px 10px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 90px;
+                height: 1px;
+                top: 62px;
+                left: 30%;
+                background: #3D1101;
+            }
+        }
+        .name-eng {
+            font-size: 12px;
+            line-height: 16px;
+            margin-bottom: 32px;
+        }
+        .name-line {
+            width: 91px;
+            border: 1px solid #3D1101;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+        .addto {
+            width: 100%;
+            height: 28px;
+            background: transparent;
+            border: 2px solid #FF5E45;
+            border-radius: 3px;
+            color: #FF5E45;
+            font-size: 16px;
+        }
+    }
+
+}
+
+@media (max-width: 540px) {
+    .order {
+        .container {
+           padding: 48px 10px 0 10px;
+           flex-direction: column;
+           gap: 24px;
+        }
+        .list {
+            flex-direction: column;
+            width: 100%; 
+        }
+        .toolbar {
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        .items {
+            flex-wrap: wrap;
+            justify-content: center;
+            .card {
+                width: 300px;
+            }
+        }
+    }
+}
